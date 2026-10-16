@@ -1,0 +1,1 @@
+all visualization images from project auto-mpg-fuel-efficiency is stored here.
