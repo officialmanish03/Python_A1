@@ -1,0 +1,1 @@
+All images related to nyc_taxi_trip_analysis.ipynb are stored in this folder.
