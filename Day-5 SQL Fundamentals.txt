@@ -1,0 +1,212 @@
+# Day 5: SQL Fundamentals & LeetCode Database Practice
+
+## 📌 Overview
+
+Day 5 of my learning journey was focused on strengthening my SQL fundamentals and improving my database problem-solving skills.
+
+Not every day is about building projects. Some days are about learning useful concepts, practicing core skills, and building a strong foundation for future development.
+
+Today, I revised essential SQL concepts and solved three LeetCode Database problems involving filtering conditions, logical operators, and handling `NULL` values. I also documented my learnings and solutions to maintain a consistent record of my progress.
+
+## 🎯 Learning Objectives
+
+- Understand the fundamentals of SQL and relational databases.
+- Retrieve specific data using `SELECT`.
+- Filter records using the `WHERE` clause.
+- Combine multiple conditions using `AND` and `OR`.
+- Understand comparison operators in SQL.
+- Handle missing or unknown values using `NULL` conditions.
+- Improve logical thinking through LeetCode Database problems.
+- Document daily learning and practice consistently.
+
+## 🛠️ Concepts Practiced
+
+| Concept | Description |
+|---|---|
+| `SELECT` | Retrieves data from one or more columns. |
+| `WHERE` | Filters records based on a specified condition. |
+| `AND` | Returns records when all specified conditions are true. |
+| `OR` | Returns records when at least one specified condition is true. |
+| Comparison Operators | Compare values using operators such as `=`, `>`, `<`, `>=`, `<=`, and `<>`. |
+| `NULL` Handling | Checks for missing or unknown values using `IS NULL` and `IS NOT NULL`. |
+
+## 💻 LeetCode Problems Solved
+
+### 1. 1757. Recyclable and Low Fat Products
+
+**Topics:** `SELECT`, `WHERE`, `AND`
+
+**Problem Objective:**  
+Retrieve the IDs of products that are both recyclable and low fat.
+
+**SQL Solution:**
+
+```sql
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y'
+  AND recyclable = 'Y';
+```
+
+**Concepts Learned:**
+
+- Selecting only the required column using `SELECT`.
+- Filtering rows using the `WHERE` clause.
+- Combining two conditions using `AND`.
+- Understanding that both conditions must be true for a row to appear in the result.
+
+**Key Takeaway:**  
+Use `AND` when a record must satisfy every specified condition.
+
+---
+
+### 2. 595. Big Countries
+
+**Topics:** `WHERE`, `OR`, Comparison Operators
+
+**Problem Objective:**  
+Find countries that qualify as big countries because their area is at least 3,000,000 square kilometres or their population is at least 25,000,000.
+
+**SQL Solution:**
+
+```sql
+SELECT name, population, area
+FROM World
+WHERE area >= 3000000
+   OR population >= 25000000;
+```
+
+**Concepts Learned:**
+
+- Filtering records using numerical conditions.
+- Using `>=` to include values equal to the threshold.
+- Combining alternative conditions using `OR`.
+- Understanding that satisfying either condition is sufficient.
+
+**Key Takeaway:**  
+Use `OR` when meeting any one of multiple conditions is enough.
+
+---
+
+### 3. 584. Find Customer Referee
+
+**Topics:** `NULL` Handling, `IS NULL`, `<>`, `OR`
+
+**Problem Objective:**  
+Find the names of customers who were either not referred by customer ID 2 or have no referee recorded.
+
+**SQL Solution:**
+
+```sql
+SELECT name
+FROM Customer
+WHERE referee_id <> 2
+   OR referee_id IS NULL;
+```
+
+**Concepts Learned:**
+
+- Checking for missing values using `IS NULL`.
+- Understanding that `NULL` represents an unknown or missing value.
+- Learning that `referee_id = NULL` is not the correct way to check for missing values.
+- Understanding why `referee_id <> 2` alone does not include rows where `referee_id` is `NULL`.
+- Combining conditions using `OR` to include both qualifying cases.
+
+**Key Takeaway:**  
+In SQL, use `IS NULL` to check for missing values and `IS NOT NULL` to check for non-missing values.
+
+For this problem, the `OR referee_id IS NULL` condition is essential because a comparison with `NULL` does not evaluate to `TRUE`.
+
+## 📚 Important SQL Rules to Remember
+
+### 1. `AND` vs. `OR`
+
+| Operator | Meaning |
+|---|---|
+| `AND` | All conditions must be true. |
+| `OR` | At least one condition must be true. |
+
+Example:
+
+```sql
+-- Both conditions must be satisfied
+WHERE low_fats = 'Y'
+  AND recyclable = 'Y';
+
+-- Either condition can be satisfied
+WHERE area >= 3000000
+   OR population >= 25000000;
+```
+
+### 2. Comparison Operators
+
+| Operator | Meaning |
+|---|---|
+| `=` | Equal to |
+| `<>` | Not equal to |
+| `>` | Greater than |
+| `<` | Less than |
+| `>=` | Greater than or equal to |
+| `<=` | Less than or equal to |
+
+### 3. Handling `NULL`
+
+```sql
+-- Find rows where a value is missing
+WHERE referee_id IS NULL;
+
+-- Find rows where a value is present
+WHERE referee_id IS NOT NULL;
+```
+
+**Important:** Do not use `= NULL` or `<> NULL` to test for missing values. Use `IS NULL` or `IS NOT NULL`.
+
+## 🧠 Key Learnings from Day 5
+
+By solving these three problems, I practiced:
+
+- Retrieving specific columns from a database table.
+- Applying conditions to filter records.
+- Using logical operators to express business rules.
+- Comparing numeric values against thresholds.
+- Handling `NULL` values correctly.
+- Understanding how SQL conditions affect query results.
+- Translating problem statements into logical SQL queries.
+- Writing documentation to record my learning journey.
+
+## 📈 Progress Summary
+
+| Activity | Progress |
+|---|---|
+| SQL fundamentals revision | Completed |
+| `SELECT` and `WHERE` practice | Completed |
+| `AND` and `OR` conditions | Completed |
+| Comparison operators | Practiced |
+| `NULL` handling | Practiced |
+| LeetCode Database problems | 3 solved |
+| README documentation | Prepared |
+
+## 🚀 Next Steps
+
+My next learning goals are to:
+
+- Practice more SQL problems on LeetCode.
+- Learn and practice `ORDER BY` and `DISTINCT`.
+- Explore aggregate functions such as `COUNT()`, `SUM()`, and `AVG()`.
+- Understand `GROUP BY` and `HAVING`.
+- Practice SQL joins and subqueries.
+- Apply SQL concepts to real-world datasets and mini-projects.
+
+## 💡 Final Reflection
+
+Day 5 was a reminder that consistent learning matters just as much as building projects.
+
+By practicing SQL fundamentals and solving database problems, I am gradually improving my ability to write queries, interpret conditions, and handle real-world data scenarios.
+
+I have also documented today's concepts and solved questions in this README so I can revisit them whenever needed.
+
+**Small steps. Consistent practice. Stronger fundamentals. One day at a time.**
+
+---
+
+*This README is part of my ongoing learning journey, documenting the concepts I practice and the problems I solve each day.*
